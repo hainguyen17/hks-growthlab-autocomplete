@@ -1,11 +1,15 @@
 import censusData from "../data/census_classification.json";
-import type { Entity } from "../types/Entity";
+import type {
+    GeoEntity,
+    RegionGeoEntityMap,
+    StateGeoEntityMap,
+} from "../types/GeoEntity";
 
 export function getGroupedData() {
-    const censusDataTyped = censusData as Entity[];
+    const censusDataTyped = censusData as GeoEntity[];
     let groupedData: Record<
         "regionsMetadata" | "statesMetadata" | "countiesMetadata",
-        Record<number, Entity>
+        Record<number, GeoEntity>
     > = { regionsMetadata: {}, statesMetadata: {}, countiesMetadata: {} };
 
     for (let i = 0; i < censusDataTyped.length; i++) {
@@ -32,8 +36,8 @@ export function processData(input?: string) {
 
     const { statesMetadata, countiesMetadata } = getGroupedData();
 
-    let data: Record<number, Entity[]> = {};
-    let regionData: Record<number, Record<number, Entity[]>> = {};
+    let data: StateGeoEntityMap = {};
+    let regionData: RegionGeoEntityMap = {};
 
     Object.values(countiesMetadata).forEach((county) => {
         if (

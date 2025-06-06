@@ -14,12 +14,15 @@
         "@heroui/autocomplete": "^2.3.21",
         "@heroui/system": "^2.4.16",
         "@heroui/theme": "^2.4.16",
+        "d3": "^7.9.0",
         "framer-motion": "^12.16.0",
         "react": "^19.1.0",
-        "react-dom": "^19.1.0"
+        "react-dom": "^19.1.0",
+        "react-router": "^7.6.2"
     },
     "devDependencies": {
         "@eslint/js": "^9.25.0",
+        "@types/d3": "^7.4.3",
         "@types/react": "^19.1.2",
         "@types/react-dom": "^19.1.2",
         "@vitejs/plugin-react": "^4.4.1",

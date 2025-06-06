@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Autocomplete, AutocompleteItem } from "@heroui/autocomplete";
 import { getGroupedData, processData } from "../utils/processData";
-import type { Entity } from "../types/Entity";
+import type { GeoEntity, RegionGeoEntityMap } from "../types/GeoEntity";
 
 export type FieldState = {
     selectedKey: React.Key | null;
     inputValue: string;
-    items: Record<number, Record<number, Entity[]>>;
+    items: RegionGeoEntityMap;
 };
 
 export function CountyAutocomplete() {
@@ -87,7 +87,7 @@ export function CountyAutocomplete() {
                                     {statesMetadata[stateId].name}
                                 </div>
                             </AutocompleteItem>
-                            {counties.map((county: Entity) => (
+                            {counties.map((county: GeoEntity) => (
                                 <AutocompleteItem
                                     id={"county" + county.id}
                                     key={county.id}

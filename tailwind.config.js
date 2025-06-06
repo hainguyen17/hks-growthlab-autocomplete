@@ -4,7 +4,7 @@ const { heroui } = require("@heroui/theme");
 export default {
     content: [
         "./src/**/*.{html,js,ts,tsx}",
-        "./node_modules/@heroui/theme/dist/components/*.js",
+        "./node_modules/@heroui/theme/dist/components/(autocomplete|button|input|listbox|scroll-shadow|popover).js",
     ],
     theme: {
         extend: {},
